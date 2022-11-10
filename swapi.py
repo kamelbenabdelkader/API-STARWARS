@@ -11,3 +11,13 @@ def recovery_url(categorie:str):
     else:
         print("ERREUR : la requête s’est pas déroulée correctement")
     return reponse
+
+# On crée une fonction de convertion.
+def convertion_json(reponse):
+    try:
+        contenu = reponse.json()
+        print("===> La convertion en JSON à réussis.")
+    except:
+        print("ERREUR : la convertion à écouchée !")
+    print()
+    return contenu
