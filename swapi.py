@@ -38,4 +38,8 @@ def prepare_create_dataframe():
     df = create_dataframe(contenu)
     print("Le DataFrame : ")
     return df
+
+
+
 # ==========================================================================================>
+##
