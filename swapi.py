@@ -21,3 +21,8 @@ def convertion_json(reponse):
         print("ERREUR : la convertion à écouchée !")
     print()
     return contenu
+
+# On crée un dataframe.
+def create_dataframe(contenu):
+    df = pd.DataFrame(contenu['results'])
+    return df
