@@ -1,6 +1,8 @@
 import pandas as pd
 import requests
 
+
+# ==========================================================================================>
 # On crée une fonction qui va appeler l'api.
 def recovery_url(categorie:str):
     https = "https://swapi.dev/api/"
@@ -11,7 +13,7 @@ def recovery_url(categorie:str):
     else:
         print("ERREUR : la requête s’est pas déroulée correctement")
     return reponse
-
+# ==========================================================================================>
 # On crée une fonction de convertion.
 def convertion_json(reponse):
     try:
@@ -21,8 +23,19 @@ def convertion_json(reponse):
         print("ERREUR : la convertion à écouchée !")
     print()
     return contenu
-
+# ==========================================================================================>
 # On crée un dataframe.
 def create_dataframe(contenu):
     df = pd.DataFrame(contenu['results'])
     return df
+# ==========================================================================================>
+# On crée la fonction qui va tous éxécuter.
+def prepare_create_dataframe():
+    print()
+    categorie = input("===> Veuillez saisir une catégorie ")
+    reponse = recovery_url(categorie)
+    contenu = convertion_json(reponse)
+    df = create_dataframe(contenu)
+    print("Le DataFrame : ")
+    return df
+# ==========================================================================================>
